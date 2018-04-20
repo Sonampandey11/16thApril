@@ -33,7 +33,7 @@ public class MyCalculator {
 
 			throw new CalculatorException("n and p should not be zero");
 
-		} else if (n >= -1 && p >= -1) {
+		} else if (n <= -1 && p <= -1) {
 			throw new CalculatorException("n and p should not be negative");
 		}
 
