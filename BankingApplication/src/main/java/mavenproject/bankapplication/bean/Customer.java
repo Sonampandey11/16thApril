@@ -1,6 +1,6 @@
 package mavenproject.bankapplication.bean;
 
-public class Customer {
+public class Customer extends Contact {
 	private int customerId;
 	private String firstName;
 	private String middleName;

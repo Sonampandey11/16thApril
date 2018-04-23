@@ -34,6 +34,15 @@ public class Bank  {
 	public String toString() {
 		return "Bank [bankName=" + bankName + ", bankBranch=" + bankBranch + "]";
 	}
+	public Bank(String bankName, String bankBranch) {
+		super();
+		this.bankName = bankName;
+		this.bankBranch = bankBranch;
+	}
+	public Bank() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
  
 
 }
