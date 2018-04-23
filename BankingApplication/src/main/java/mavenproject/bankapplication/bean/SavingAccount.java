@@ -1,12 +1,9 @@
 package mavenproject.bankapplication.bean;
 
 import java.util.Scanner;
-
-import javax.print.DocFlavor.INPUT_STREAM;
-
 public class SavingAccount implements Account{
 	
-	private Money balance;
+	private float balance;
 	private InterestRate interestRate;
 	private Period interestPeriod;
 	
@@ -14,14 +11,14 @@ public class SavingAccount implements Account{
 	/**
 	 * @return the balance
 	 */
-	public Money getBalance() {
+	public float getBalance() {
 		return balance;
 	}
 
 	/**
 	 * @param balance the balance to set
 	 */
-	public void setBalance(Money balance) {
+	public void setBalance(float balance) {
 		this.balance = balance;
 	}
 
@@ -53,7 +50,7 @@ public class SavingAccount implements Account{
 		this.interestPeriod = interestPeriod;
 	}
 
-	public SavingAccount(Money balance, InterestRate interestRate, Period interestPeriod) {
+	public SavingAccount(float balance, InterestRate interestRate, Period interestPeriod) {
 		super();
 		this.balance = balance;
 		this.interestRate = interestRate;
@@ -65,9 +62,12 @@ public class SavingAccount implements Account{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public String transaction() {
+	public float transaction() {
+		float interestRate = (float) 0.07;
+		float simpleInterest=balance*interestRate;
 		
-		return null;
+		
+		return balance;
 	
 	
 	}
@@ -76,41 +76,32 @@ public class SavingAccount implements Account{
 // method to deposit amount
 public  void deposit(float depositAmount)
 {
-	System.out.println("Enter an amount to deposit");
-	Scanner scan=new Scanner(System.in);
-	depositAmount=scan.nextFloat();
-	if(depositAmount<0)
-	{
-		System.out.println("Incorrect amount entered");
-	}
 	
-	else
-	{
-		Float final_amount = balance.getBalance();
-		final_amount=balance.getBalance()+depositAmount;
-		
-	}
+	
+	balance=depositAmount+balance;
+	System.out.println("balance"+balance);
 	
 }
+
 
 
 // method to withdraw amount
 public void withdraw(float withdrawAmount)
 {
 	System.out.println("Your current balance is :" + balance);
-	System.out.println("Enter an amount to withdraw");
-	Scanner scann=new Scanner(System.in);
-	withdrawAmount=scann.nextInt();
-	float withdrawl=balance.getBalance();
-	if(withdrawAmount>balance.getBalance())
+	
+	//float withdrawl=balance;
+	if(withdrawAmount>balance)
 	{
 		System.out.println(("You have insufficient balance"));
 	}
 	else
 	{
-		withdrawl=balance.getBalance()-withdrawAmount;
-		
+		balance=balance-withdrawAmount;
+		System.out.println("balance"+balance);
 	}
+	
+	
 	
 	
 }

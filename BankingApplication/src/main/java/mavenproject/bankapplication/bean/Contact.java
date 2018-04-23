@@ -1,9 +1,18 @@
 package mavenproject.bankapplication.bean;
 
 public class Contact extends Address{
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Contact [phoneNumber=" + phoneNumber + ", mobileNumber=" + mobileNumber + ", email=" + email
+				+ ", address=" + address + "]";
+	}
 	private long phoneNumber;
 	private long mobileNumber;
 	private String email;
+	private Address address;
 	/**
 	 * @return the phoneNumber
 	 */
@@ -44,6 +53,15 @@ public class Contact extends Address{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public Contact(long phoneNumber,
+			long mobileNumber, String email, Address address) {
+		
+		this.phoneNumber = phoneNumber;
+		this.mobileNumber = mobileNumber;
+		this.email = email;
+		this.address = address;
+	}
+	
 	
 
 	

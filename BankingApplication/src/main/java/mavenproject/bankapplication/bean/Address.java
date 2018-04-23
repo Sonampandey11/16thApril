@@ -64,6 +64,14 @@ public class Address {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Address [street=" + street + ", houseNumber=" + houseNumber + ", pinNumber=" + pinNumber + ", city="
+				+ city + "]";
+	}
 	
 	
 	
