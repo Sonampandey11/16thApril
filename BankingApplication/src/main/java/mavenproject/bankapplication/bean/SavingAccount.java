@@ -65,7 +65,7 @@ public class SavingAccount implements Account{
 	public float transaction() {
 		float interestRate = (float) 0.07;
 		float simpleInterest=balance*interestRate;
-		
+		System.out.println("Your interest is"+simpleInterest);
 		
 		return balance;
 	

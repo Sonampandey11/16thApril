@@ -7,6 +7,7 @@ public class FlexibleSavingAccount implements Account {
 	
 		float interesatRate=(float) 0.006;
 		//float value=get;
+		System.out.println(interesatRate);
 		return interesatRate;
 	}
 
