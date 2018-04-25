@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+	<bean name="bankApp" class="com.cg.model.Bank">
+		<constructor-arg value="StandardChartered"
+			type="String"></constructor-arg>
+		<constructor-arg value="Airoli" type="String"></constructor-arg>
+		<constructor-arg value="101" type="int"></constructor-arg>
+	</bean>
+	 
+	<bean id="address" class="com.cg.model.Address">
+		<constructor-arg index = "0" value="BSF Campus"></constructor-arg>
+		<constructor-arg index = "1" value="101" ></constructor-arg>
+		<constructor-arg index=  "2" value="452005"></constructor-arg>
+		<constructor-arg index=  "3" value="mumbai"></constructor-arg>
+	</bean>
+
+	<bean name="contact" class="com.cg.model.Contact">
+		<constructor-arg index = "0" value="9631259129"></constructor-arg>
+		<constructor-arg index = "1"  value="220555" ></constructor-arg>
+		<constructor-arg index = "2"   value="sonam.srl2@gmail.com"></constructor-arg>
+		<constructor-arg index = "3"> <ref bean="address"></ref></constructor-arg>
+	</bean>
+  
+  <bean name="customer" class="com.cg.model.Customer">
+		<constructor-arg index = "0" value="1523"></constructor-arg>
+		<constructor-arg index = "1" value="sonam"></constructor-arg>
+		<constructor-arg index = "2" value="pandey"></constructor-arg>
+		<constructor-arg index = "3"><ref bean="contact"></ref></constructor-arg>
+	</bean>
+	
+	<bean name="saving"  class="com.cg.model.SavingAccount">
+	<constructor-arg index = "0" value="10000"></constructor-arg>
+	<constructor-arg index = "1"  value="0.007"> </constructor-arg>
+	<constructor-arg index = "2"  value="3"></constructor-arg>	
+</bean>
+<bean name="savings"  class="com.cg.service.BankServiceImpl">
+</bean>
+</beans>
+ 
