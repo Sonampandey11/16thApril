@@ -15,7 +15,14 @@ import com.cg.model.SavingAccount;
 import com.cg.service.BankServiceImpl;
 import com.cg.service.SavingAccountServiceImpl;
 
-
+ *
+//*********************************************************************** 
+//	Program name : 	        SpringBankingApplication
+//	Program Description :	This project define about the various functionalities
+// *                            to withdraw money and deposit money using spring
+ */
+//                        
+//***********************************************************************
 public class BankAppController {
 	private static final Logger log = Logger.getLogger(BankAppController.class.getName());
 	public static void main( String[] args )
@@ -30,8 +37,8 @@ public class BankAppController {
 	    System.out.println(customer1);
 	  
 	    // performaing withdraw and deposit
-	    log.info("Enter amount to withdraw");
 	    Scanner scan = new Scanner(System.in);
+	    log.info("Enter amount to withdraw");
 	    float withdraw=scan.nextFloat();
 	    SavingAccount savings=(SavingAccount) application.getBean("saving");
 	    System.out.println(savings);
