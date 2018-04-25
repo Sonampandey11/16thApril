@@ -28,23 +28,14 @@ public class BankAppController {
 	    System.out.println(bank);
 	    Customer customer1=(Customer) application.getBean("customer");
 	    System.out.println(customer1);
-	    
-	    
-	    
+	  
 	    // performaing withdraw and deposit
 	    log.info("Enter amount to withdraw");
 	    Scanner scan = new Scanner(System.in);
 	    float withdraw=scan.nextFloat();
 	    SavingAccount savings=(SavingAccount) application.getBean("saving");
 	    System.out.println(savings);
-	    
-	    
-	    
-	    
-	  
-	    
-	    
-	    
+   
 	
 }
 }
