@@ -20,12 +20,12 @@ public class BankTest {
 		app= new SavingAccountServiceImpl();
 		
 	}
-/*	@Test
+	@Test
 	public void withdrawTest()
 	{
 		app.deposit(1000);
-		assertEquals(10000, app.deposit());
-	}*/
+		//assertEquals(10000, app.deposit());
+	}
 	
 	@Test
 	public void testDeposit()

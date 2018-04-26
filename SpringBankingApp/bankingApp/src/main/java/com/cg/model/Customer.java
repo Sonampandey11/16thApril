@@ -14,7 +14,7 @@ public class Customer extends Contact {
 	/**
 	 * @param customerId the customerId to set
 	 */
-	public void setCustomerId(int customerId) {
+	public void setCustomerId(final int customerId) {
 		this.customerId = customerId;
 	}
 	/**
@@ -26,7 +26,7 @@ public class Customer extends Contact {
 	/**
 	 * @param firstName the firstName to set
 	 */
-	public void setFirstName(String firstName) {
+	public void setFirstName(final String firstName) {
 		this.firstName = firstName;
 	}
 	/**
@@ -38,7 +38,7 @@ public class Customer extends Contact {
 	/**
 	 * @param lastName the lastName to set
 	 */
-	public void setLastName(String lastName) {
+	public void setLastName(final String lastName) {
 		this.lastName = lastName;
 	}
 	/**
@@ -50,7 +50,7 @@ public class Customer extends Contact {
 	/**
 	 * @param contact the contact to set
 	 */
-	public void setContact(Contact contact) {
+	public void setContact(final Contact contact) {
 		this.contact = contact;
 	}
 	/* (non-Javadoc)
@@ -65,12 +65,12 @@ public class Customer extends Contact {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Customer(long phoneNumber, long mobileNumber, String email, Address address) {
+	public Customer(final long phoneNumber,final long mobileNumber, final String email, final Address address) {
 		super(phoneNumber, mobileNumber, email, address);
 		// TODO Auto-generated constructor stub
 	}
-	public Customer(int customerId, String firstName, String lastName, Contact contact) {
-		this.customerId = customerId;
+	public Customer(final int customerId, final String firstName, final String lastName, final Contact contact) {
+		this.customerId = +customerId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.contact = contact;

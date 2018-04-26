@@ -17,14 +17,7 @@ public class BankDaoImpl implements IBankDao{
 		return set;
 		
 		
-		/*
-		 *public List<Bank> addBank(Bank bank) {
-		List<Bank> list=new ArrayList();
 	
-		list.add(bank);
-		// TODO Auto-generated method stub
-		return list;  
-		 */
 		
 	}
 

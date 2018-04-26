@@ -1,11 +1,17 @@
 package com.cg.model;
 
 
+/**
+ * @author trainee
+ *
+ */
 public class SavingAccount {
-	
-	private float balance;
+	//private int accountNumber;
+	private float balance=10000;
 	private float interestRate;
 	private float interestPeriod;
+	
+	
 	/**
 	 * @return the balance
 	 */
@@ -15,7 +21,7 @@ public class SavingAccount {
 	/**
 	 * @param balance the balance to set
 	 */
-	public void setBalance(float balance) {
+	public void setBalance(final float balance) {
 		this.balance = balance;
 	}
 	/**
@@ -27,7 +33,7 @@ public class SavingAccount {
 	/**
 	 * @param interestRate the interestRate to set
 	 */
-	public void setInterestRate(float interestRate) {
+	public void setInterestRate(final float interestRate) {
 		this.interestRate = interestRate;
 	}
 	/**
@@ -39,19 +45,12 @@ public class SavingAccount {
 	/**
 	 * @param interestPeriod the interestPeriod to set
 	 */
-	public void setInterestPeriod(float interestPeriod) {
+	public void setInterestPeriod(final float interestPeriod) {
 		this.interestPeriod = interestPeriod;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "SavingAccount [balance=" + balance + ", interestRate=" + interestRate + ", interestPeriod="
-				+ interestPeriod + "]";
-	}
-	public SavingAccount(float balance, float interestRate, float interestPeriod) {
-		this.balance = 10000;
+	public SavingAccount( final float balance, final float interestRate, final float interestPeriod) {
+		
+		this.balance = balance;
 		this.interestRate = interestRate;
 		this.interestPeriod = interestPeriod;
 	}
@@ -59,6 +58,16 @@ public class SavingAccount {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "SavingAccount [ balance=" + balance + ", interestRate="
+				+ interestRate + ", interestPeriod=" + interestPeriod + "]";
+	}
+	
+
 	
 	
 }

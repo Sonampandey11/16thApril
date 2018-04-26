@@ -1,10 +1,16 @@
 package com.cg.service;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.cg.model.SavingAccount;
 
 public class SavingAccountServiceImpl implements ISavingAccountService {
 
-    SavingAccount saving;
+	/*final ApplicationContext application= new ClassPathXmlApplicationContext("application-context.xml");
+	final SavingAccount saving=(SavingAccount) application.getBean("save");
+	*/
+	SavingAccount saving= new SavingAccount();
 	@Override
 	public float transaction() {
 
@@ -18,7 +24,7 @@ public class SavingAccountServiceImpl implements ISavingAccountService {
 	@Override
 	public void deposit(final float depositAmount) {
 
-		 float initialBalance=(int) (depositAmount+saving.getBalance());
+		float initialBalance=(int) (depositAmount+saving.getBalance());
 		System.out.println("balance"+initialBalance);
 	}
 
@@ -30,12 +36,13 @@ public class SavingAccountServiceImpl implements ISavingAccountService {
 		//float withdrawl=balance;
 		if(withdrawlAmount>saving.getBalance())
 		{
-			System.out.println(("You have insufficient balance"));
+			System.out.println("You have insufficient balance");
 		}
 		else
 		{
-			float initialBalance=(int) (saving.getBalance()-withdrawlAmount);
-			System.out.println("balance"+initialBalance);
+			float finalBalance=(int) (saving.getBalance()-withdrawlAmount);
+			//System.out.println("balance"+initialBalance);
+			System.out.println("Your final balance is "+finalBalance);
 		}
 
 
