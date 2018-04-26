@@ -17,7 +17,11 @@ public class BankDaoImpl implements IBankDao{
 		return set;
 		
 		
+<<<<<<< HEAD
 	
+=======
+		
+>>>>>>> 22f7217710be6bec5613f9d92bff7087b4d8f91e
 		
 	}
 
