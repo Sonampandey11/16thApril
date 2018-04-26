@@ -1,4 +1,4 @@
-package mavenproject.bankapplication.bean;
+package com.cg.model;
 
 public class InterestRate {
 

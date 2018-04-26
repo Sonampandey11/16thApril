@@ -1,12 +1,12 @@
-package mavenproject.bankapplication.bean;
+package com.cg.model;
 
-import java.util.Date;
-
-
-public class Statement{
+/**
+ * @author trainee
+ *
+ */
+public class Statement {
 private String transactionDate;
 private String transactionAmount;
-private String transactionTime;
 /**
  * @return the transactionDate
  */
@@ -31,32 +31,21 @@ public String getTransactionAmount() {
 public void setTransactionAmount(String transactionAmount) {
 	this.transactionAmount = transactionAmount;
 }
-/**
- * @return the transactionTime
- */
-public String getTransactionTime() {
-	return transactionTime;
+public Statement(String transactionDate, String transactionAmount) {
+	this.transactionDate = transactionDate;
+	this.transactionAmount = transactionAmount;
+}
+public Statement() {
+	super();
+	// TODO Auto-generated constructor stub
 }
 /* (non-Javadoc)
  * @see java.lang.Object#toString()
  */
 @Override
 public String toString() {
-	return "Statement [transactionDate=" + transactionDate + ", transactionAmount=" + transactionAmount
-			+ ", transactionTime=" + transactionTime + "]";
+	return "Statement [transactionDate=" + transactionDate + ", transactionAmount=" + transactionAmount + "]";
 }
-/**
- * @param transactionTime the transactionTime to set
- */
-public void setTransactionTime(String transactionTime) {
-	this.transactionTime = transactionTime;
-}
-
-public Statement() {
-	super();
-	// TODO Auto-generated constructor stub
-}
-
 
 
 
