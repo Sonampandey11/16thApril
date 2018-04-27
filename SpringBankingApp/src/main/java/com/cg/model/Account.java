@@ -8,6 +8,7 @@ public class Account {
 	private long accountNumber;
 	private String accountType;
 	private Customer customerId;
+	
 	/**
 	 * @return the accountNumber
 	 */

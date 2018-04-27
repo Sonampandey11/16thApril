@@ -25,4 +25,16 @@ public class CustomerImpl implements ICustomerService {
 		return dao.retreiveById(customer);
 	}
 
+	@Override
+	public int updateCustomerDetails(Customer customer) {
+		// TODO Auto-generated method stub
+		return dao.updateCustomerDetails(customer);
+	}
+
+	@Override
+	public int deleteCustomerDetails(Customer customer) {
+		// TODO Auto-generated method stub
+		return deleteCustomerDetails(customer);
+	}
+
 }

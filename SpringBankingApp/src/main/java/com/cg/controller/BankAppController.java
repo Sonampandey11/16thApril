@@ -8,10 +8,13 @@ import java.util.logging.Logger;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.cg.model.Account;
 import com.cg.model.Bank;
 import com.cg.model.Customer;
 import com.cg.model.Statement;
 import com.cg.service.CustomerImpl;
+import com.cg.service.ICustomerService;
 import com.cg.service.ISavingAccountService;
 import com.cg.service.SavingAccountServiceImpl;
 import com.cg.service.StatementImpl;
@@ -26,92 +29,120 @@ public class BankAppController {
 	/**
 	 * @param args
 	 */
-	
+
 	public static void main( String[] args )
 	{
-		
+
 		final ApplicationContext application= new ClassPathXmlApplicationContext("application-context.xml");
-	    final Bank bank=(Bank) application.getBean("bankApp");
-	    final Set<Bank> bankSet=new HashSet<Bank>();
-	    bankSet.add(bank);
-	    System.out.println(bank);
-	    final Customer customer1=(Customer) application.getBean("customer");
-	    System.out.println(customer1);
-	    
-	    
-	    
-	    // performaing  deposit of savingAccount
-	    final ISavingAccountService service=(SavingAccountServiceImpl)  application.getBean("savings");
-	    //SavingAccountServiceImpl service= new SavingAccountServiceImpl();
-	    final Scanner scan = new Scanner(System.in);
-	    System.out.println("Enter amount to deposit");
-	    final float depositAmount=scan.nextFloat();
-	  
-	    
-	    //performing withdraw from savingAccount
-	    System.out.println("Enter an amount to withdraw");
-	    final float withdrawAmount=scan.nextFloat();
-	    service.withdraw(withdrawAmount);
-	    System.out.println(withdrawAmount);
-	   
-	    //adding details of customer
-	    final Customer custom=(Customer) application.getBean("customerAdd");
-	    final Customer custom2=(Customer) application.getBean("cus");
-	    Set<Customer> setvalue=new HashSet<>();
-	    setvalue.add(custom);
-	    setvalue.add(custom2);
-	    System.out.println(setvalue);
-	    
-	    //viewById details of Customer
-	    System.out.println("Enter customerId");
-	    int customId=scan.nextInt();
-	    if(custom.getCustomerId()==customId || custom2.getCustomerId()==customId)
+		final Bank bank=(Bank) application.getBean("bankApp");
+		final Set<Bank> bankSet=new HashSet<Bank>();
+		bankSet.add(bank);
+		System.out.println(bank);
+		final Customer customer1=(Customer) application.getBean("customer");
+		System.out.println(customer1);
+
+
+
+		// performaing  deposit of savingAccount
+		final ISavingAccountService service=(SavingAccountServiceImpl)  application.getBean("savings");
+		//SavingAccountServiceImpl service= new SavingAccountServiceImpl();
+		final Scanner scan = new Scanner(System.in);
+		System.out.println("Enter amount to deposit");
+		final float depositAmount=scan.nextFloat();
+
+
+		//performing withdraw from savingAccount
+		System.out.println("Enter an amount to withdraw");
+		final float withdrawAmount=scan.nextFloat();
+		service.withdraw(withdrawAmount);
+		System.out.println(withdrawAmount);
+
+		//adding details of customer
+		final Customer custom=(Customer) application.getBean("customerAdd");
+		final Customer custom2=(Customer) application.getBean("cus");
+		Set<Customer> setvalue=new HashSet<>();
+		setvalue.add(custom);
+		setvalue.add(custom2);
+		setvalue.add(customer1);
+		// System.out.println(setvalue);
+
+		//viewById details of Customer
+		System.out.println("Enter customerId");
+		Integer customId=scan.nextInt();
+
+		if(customId.equals(custom.getCustomerId()))
+				{
+                System.out.println(setvalue);
+
+				}
+		/* if(customer1.getCustomerId()==customId || custom.getCustomerId()==customId || custom2.getCustomerId()==customId)
 	    {
 	    	System.out.println(setvalue);
 	    }
-	
+
 	    else
 	    {
 	    	System.out.println("please enter correct customerId ");
-	    }
-	    
-	    
-	    	
-	    //displaying ministatement of transaction
-	    
-	  /* final StatementImpl ministatement=(StatementImpl) application.getBean("mini");*/
-	   
-	    
-	    
-	    
-	   
-	    
-	    
-	    
-	   /* System.out.println(custom);
-	    System.out.println(custom2);*/
-	  /*  //adding details of customer and view by id and view all
-	    final CustomerImpl custom=(CustomerImpl) application.getBean("customerAdd");
-	    
-	   
-	    final float withdrawAmount=scan.nextFloat();
-	    final SavingAccount savings=(SavingAccount) application.getBean("saving");
+	    }*/
+
+
+
+		//displaying ministatement of transaction
+
+		/* final StatementImpl ministatement=(StatementImpl) application.getBean("mini");*/
+
+
+
+		//displaying details of customer on basis of customerId
+
+		final Account acccount=(Account) application.getBean("accountId");
+		System.out.println(acccount);	    
+
+
+
+
+		//update Customer Details
+		final ICustomerService serviceDetail=(CustomerImpl) application.getBean("customerservice");
+		System.out.println("enter the customerId that you want to update");
+		Integer customerId=scan.nextInt();
+		if(customerId.equals(custom.getCustomerId()))
+		{
+			System.out.println("Enter your lastName");
+			String lastName=scan.next();
+			System.out.println("Enter your mobileNumber");
+			long mobileNumber=scan.nextLong();
+			serviceDetail.updateCustomerDetails(custom);
+			serviceDetail.updateCustomerDetails(custom2);
+			System.out.println(custom);
+		}
+		else
+		{
+			System.out.println("please enter valid customer detail");
+		}
+
+
+
+
+
+
+
+		/*
 	    System.out.println(savings);
 	    //service.deposit(withdraw);
 	    service.withdraw(50000);
-	    
-	  
-	    
+
+
+
 	    //System.out.println("Enter details of Customer");
-	    */
-	    
-	  
-	    
-	    
-	  
-	    
-	    
-	    
-	
-}
+		 */
+
+
+
+
+
+
+
+
+
+	}
 }

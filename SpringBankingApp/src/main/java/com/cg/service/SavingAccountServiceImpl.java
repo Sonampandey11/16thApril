@@ -47,5 +47,15 @@ public class SavingAccountServiceImpl implements ISavingAccountService {
 
 
 	}
+	/*
+	 * (non-Javadoc)
+	 * @see com.cg.service.ISavingAccountService#deleteAccount()
+	 */
+
+	@Override
+	public void deleteAccount() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
