@@ -1,14 +1,38 @@
 package com.cg.dao;
 
-import com.cg.service.CustomerServiceImpl;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-public class CustomerDaoImpl implements CustomerInterface{
+import com.cg.model.Customer;
 
-	CustomerServiceImpl customer;
+public class CustomerDaoImpl implements ICustomerDao {
 
-	public String viewAll() {
-		
-		return customer.viewAll();
+	@Override
+	public Set<Customer> addCustomerDetails(final Customer customer) {
+		final Set<Customer> set=new HashSet<Customer>();
+		set.add(customer);
+		return set;
+	}
+
+	@Override
+	public Set<Customer> viewCustomerDetails(final Customer customer) {
+		final Set<Customer> set=new  HashSet<Customer>();
+		final Iterator<Customer> view=set.iterator();
+		while(view.hasNext())
+		{
+			System.out.println(view.next());
+		}
+
+		return set;
+	}
+
+	@Override
+	public Set<Customer> retreiveById(final Customer customer) {
+		final Customer customer2=new Customer();
+        customer2.getCustomerId();
+        
+		return retreiveById(customer2);
 	}
 
 }
