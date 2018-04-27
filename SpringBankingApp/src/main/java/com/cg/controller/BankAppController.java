@@ -45,14 +45,14 @@ public class BankAppController {
 
 		// performaing  deposit of savingAccount
 		final ISavingAccountService service=(SavingAccountServiceImpl)  application.getBean("savings");
-		//SavingAccountServiceImpl service= new SavingAccountServiceImpl();
+       // log.info("Enter your customId");
 		final Scanner scan = new Scanner(System.in);
-		System.out.println("Enter amount to deposit");
+		log.info("Enter amount to deposit");
 		final float depositAmount=scan.nextFloat();
-
+        service.deposit(depositAmount);
 
 		//performing withdraw from savingAccount
-		System.out.println("Enter an amount to withdraw");
+		log.info("Enter an amount to withdraw");
 		final float withdrawAmount=scan.nextFloat();
 		service.withdraw(withdrawAmount);
 		System.out.println(withdrawAmount);
@@ -88,42 +88,49 @@ public class BankAppController {
 
 
 		//displaying ministatement of transaction
-
-		/* final StatementImpl ministatement=(StatementImpl) application.getBean("mini");*/
-
+       
 
 
 		//displaying details of customer on basis of customerId
 
 		final Account acccount=(Account) application.getBean("accountId");
 		System.out.println(acccount);	    
-
+   
 
 
 
 		//update Customer Details
 		final ICustomerService serviceDetail=(CustomerImpl) application.getBean("customerservice");
-		System.out.println("enter the customerId that you want to update");
-		Integer customerId=scan.nextInt();
-		if(customerId.equals(custom.getCustomerId()))
+		log.info("enter the customerId that you want to update");
+		final Integer customerId=scan.nextInt();
+		if(customerId==custom.getCustomerId())
 		{
-			System.out.println("Enter your lastName");
-			String lastName=scan.next();
-			System.out.println("Enter your mobileNumber");
-			long mobileNumber=scan.nextLong();
-			serviceDetail.updateCustomerDetails(custom);
-			serviceDetail.updateCustomerDetails(custom2);
-			System.out.println(custom);
+			System.out.println("Enter your firstNAme you want to change");
+			String name=scan.next();
+			serviceDetail.updateCustomerDetails(custom, name);
+			System.out.println("Updated details of customer"+custom);
 		}
 		else
 		{
-			System.out.println("please enter valid customer detail");
+			log.info("please enter valid customer detail");
 		}
 
 
-
-
-
+      //delete details of customer
+		log.info("Enter customerId that you want to delete");
+		Integer cId=scan.nextInt();
+		if(cId==custom.getCustomerId())
+		{
+			serviceDetail.deleteCustomerDetails(custom, null);
+			log.info("Deleted data of customer");
+		}
+		else
+		{
+		   log.info("Please enter valid emailId");
+		}
+		
+       
+		
 
 
 		/*

@@ -13,7 +13,7 @@ public interface ICustomerService {
 	public Set<Customer> addCustomerDetails(Customer customer);
 	public Set<Customer> viewCustomerDetails(Customer customer);
     public Set<Customer> retreiveById(Customer customer);
-    public int updateCustomerDetails(Customer customer);
-    public int deleteCustomerDetails(Customer customer);
+    public void updateCustomerDetails(Customer customer,String name);
+    public void deleteCustomerDetails(Customer customer,String firstname);
 	
 }

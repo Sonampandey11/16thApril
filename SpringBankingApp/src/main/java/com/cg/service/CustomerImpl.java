@@ -13,6 +13,17 @@ public class CustomerImpl implements ICustomerService {
 		return dao.addCustomerDetails(customer);
 	}
 
+	/**
+	 * @return the dao
+	 */
+
+	/**
+	 * @param dao the dao to set
+	 */
+	public void setDao(CustomerDaoImpl dao) {
+		this.dao = dao;
+	}
+
 	@Override
 	public Set<Customer> viewCustomerDetails(final Customer customer) {
 		// TODO Auto-generated method stub
@@ -26,15 +37,15 @@ public class CustomerImpl implements ICustomerService {
 	}
 
 	@Override
-	public int updateCustomerDetails(Customer customer) {
+	public void updateCustomerDetails(Customer customer,String name) {
 		// TODO Auto-generated method stub
-		return dao.updateCustomerDetails(customer);
+		dao.updateCustomerDetails(customer,name);
 	}
 
 	@Override
-	public int deleteCustomerDetails(Customer customer) {
+	public void deleteCustomerDetails(Customer customer,String firstname) {
 		// TODO Auto-generated method stub
-		return deleteCustomerDetails(customer);
+		//dao.deleteCustomerDetails(customer);
 	}
 
 }

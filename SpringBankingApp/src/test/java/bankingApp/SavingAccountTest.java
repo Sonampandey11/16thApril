@@ -21,8 +21,13 @@ public class SavingAccountTest {
 	{
 	//service= new SavingAccountServiceImpl();	
 	}
-	
 	@Test
+	public void testwithdraw()
+	{
+		
+	}
+	
+	/*@Test
 	public void testDeposit()
 	{
 		assertEquals(0, 0);
@@ -30,9 +35,10 @@ public class SavingAccountTest {
 	}
 	
 	@Test
-	public void testWithdraw()
+	public void testWithdraw(float depositAmount)
 	{
-		//assertEquals(100, service.withdraw(200));
+		
+		//assertEquals(100, service.deposit(depositAmount));
 	}
 	
 	@Test
@@ -53,7 +59,7 @@ public class SavingAccountTest {
 	public void testNegativeNumber()
 	{
 	 //assertFalse(service.deposit(-2));	
-	}
+	}*/
 	
 	
 	@Test

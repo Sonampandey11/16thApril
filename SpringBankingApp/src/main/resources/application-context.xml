@@ -90,8 +90,14 @@
 	<constructor-arg index="2"><ref bean="cus"></ref> </constructor-arg>
 	</bean> 
 	
+	<bean id="dao" class="com.cg.dao.CustomerDaoImpl"></bean>
 	
-	<bean name="customerservice" class="com.cg.service.CustomerImpl"></bean>
+	
+	
+	<bean name="customerservice" class="com.cg.service.CustomerImpl">
+	<property name="dao" ref="dao"></property>
+	</bean>
+	
 	
 
 </beans>

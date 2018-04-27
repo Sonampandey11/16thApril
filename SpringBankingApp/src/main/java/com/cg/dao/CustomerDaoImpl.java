@@ -1,11 +1,8 @@
 package com.cg.dao;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
-
 import com.cg.model.Customer;
 
 public class CustomerDaoImpl implements ICustomerDao {
@@ -38,22 +35,22 @@ public class CustomerDaoImpl implements ICustomerDao {
 	}
 
 	@Override
-	public int updateCustomerDetails(Customer customer) {
-		final Set<Customer> set=new HashSet<Customer>();
-		Customer custom= new Customer();
-		//custom.setLastName("singh");
-		//custom.setMobileNumber(963125);
-		System.out.println("updated details of customer"+custom.getLastName());
-		System.out.println(custom.getMobileNumber());
-		
-		
-		return updateCustomerDetails(custom);
+	public void updateCustomerDetails(final Customer customer,final String firstName) {
+		//final Set<Customer> set=new HashSet<Customer>();
+		customer.setFirstName(firstName);
+		System.out.println(customer.getFirstName());
 	}
 
 	@Override
-	public int deleteCustomerDetails(Customer customer) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void deleteCustomerDetails(final Customer customer,final String firstName) {
+		final Set<Customer> set=new  HashSet<Customer>();
+		
+		final Iterator<Customer> iterate=set.iterator();
+		while(iterate.hasNext())
+		{
+			iterate.remove();
+		
 	}
 
+}
 }
