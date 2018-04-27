@@ -29,48 +29,61 @@
 		<constructor-arg index="2"
 			value="sonam.srl2@gmail.com"></constructor-arg>
 		<constructor-arg index="3">
-			<ref bean="address"></ref></constructor-arg>
+			<ref bean="address"></ref>
+		</constructor-arg>
 	</bean>
 
 	<bean name="customer" class="com.cg.model.Customer">
 		<constructor-arg index="0" value="1523"></constructor-arg>
 		<constructor-arg index="1" value="sonam"></constructor-arg>
 		<constructor-arg index="2" value="pandey"></constructor-arg>
-		<constructor-arg index="3"><ref bean="contact"></ref></constructor-arg>
+		<constructor-arg index="3">
+			<ref bean="contact"></ref>
+		</constructor-arg>
 	</bean>
-	
-	
-	  <bean name="saving" class="com.cg.model.SavingAccount">
-	<constructor-arg index="0" value="10000"></constructor-arg>
+
+
+	<bean name="saving" class="com.cg.model.SavingAccount">
+		<constructor-arg index="0" value="10000"></constructor-arg>
 		<constructor-arg index="1" value="0.007"></constructor-arg>
-		<constructor-arg index="2" value="3"></constructor-arg> 
-	<!-- <constructor-arg index="3"><ref bean="savings"></ref></constructor-arg>-->
-	
+		<constructor-arg index="2" value="3"></constructor-arg>
+		<!-- <constructor-arg index="3"><ref bean="savings"></ref></constructor-arg> -->
+
 	</bean>
-   
-	
- 	<bean name="savings" class="com.cg.service.SavingAccountServiceImpl">
- 	<!--  <constructor-arg index= "0"><ref bean="saving"></ref></constructor-arg> -->
+
+
+	<bean name="savings"
+		class="com.cg.service.SavingAccountServiceImpl">
+		<!-- <constructor-arg index= "0"><ref bean="saving"></ref></constructor-arg> -->
 	</bean>
-	
-  <bean name="customerAdd" class="com.cg.model.Customer">
+
+	<bean name="customerAdd" class="com.cg.model.Customer">
 		<constructor-arg index="0" value="152356"></constructor-arg>
 		<constructor-arg index="1" value="awani"></constructor-arg>
 		<constructor-arg index="2" value="pandey"></constructor-arg>
-		<constructor-arg index="3"><ref bean="contact"></ref></constructor-arg>
+		<constructor-arg index="3">
+			<ref bean="contact"></ref>
+		</constructor-arg>
 	</bean>
-	
-		
- <bean name="cus" class="com.cg.model.Customer">
+
+
+	<bean name="cus" class="com.cg.model.Customer">
 		<constructor-arg index="0" value="10001"></constructor-arg>
-		<constructor-arg index="1" value="ritika"></constructor-arg>
+		<constructor-arg index="1" value="anu"></constructor-arg>
 		<constructor-arg index="2" value="verma"></constructor-arg>
-		<constructor-arg index="3"><ref bean="contact"></ref></constructor-arg>
-		
+		<constructor-arg index="3">
+			<ref bean="contact"></ref>
+		</constructor-arg>
+
 	</bean>
+	<bean name="state" class="com.cg.service.StatementImpl">
 	
-	<!-- <bean name="customerService" class="com.cg.CustomerImpl">
-	</bean>  -->
-	
+	</bean>
+
+	<!-- <bean name="customerService" class="com.cg.service.CustomerImpl">
+    <constructor-arg index="0"><ref bean ="cus"></ref></constructor-arg>
+    <constructor-arg index="1"><ref bean="customerAdd"></ref></constructor-arg>
+	</bean> -->
+
 </beans>
  

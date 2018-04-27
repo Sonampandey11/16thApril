@@ -4,50 +4,41 @@ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cg.controller.BankAppController;
+import com.cg.model.Bank;
 import com.cg.service.SavingAccountServiceImpl;
 
 
 
 public class BankTest {
-   SavingAccountServiceImpl app;
-   BankAppController mainapplication;
-	@Before
+	final ApplicationContext application= new ClassPathXmlApplicationContext("application-context.xml");
+    final Bank bank=(Bank) application.getBean("bankApp");
+	@Ignore
 	public void setUp()
 	{
-		app= new SavingAccountServiceImpl();
+		//app= new SavingAccountServiceImpl();
 		
-	}
-	@Test
-	public void withdrawTest()
-	{
-		app.deposit(1000);
-		//assertEquals(10000, app.deposit());
 	}
 	
 	@Test
-	public void testDeposit()
+	public void testBank()
 	{
-		app.deposit(1000);
-		//assertEquals(10000, app.deposit(2000));
+		assertEquals("StandardChartered", bank.getBankName());
+		
 	}
-
-	@After
-	public void tearDown()
-	{
-		app=null;
-	}
-
-
-
-
-
-    
+	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testDetails()
+	{
+		assertEquals("Airoli", bank.getBankBranch());
+		assertEquals("101", bank.getBankId());
 	}
+	
+	
 
 }

@@ -1,5 +1,6 @@
 package com.cg.service;
 
+import com.cg.dao.StatemenDaoImpl;
 import com.cg.model.Statement;
 
 /* (non-Javadoc)
@@ -7,11 +8,14 @@ import com.cg.model.Statement;
  */
 public class StatementImpl implements IStatement {
 
-	Statement statement=new Statement();
+	StatemenDaoImpl dao;
 	@Override
-	public void getMiniStatement() {
+	public void getMiniStatement(Statement satement) {
 		
+		
+		dao.getMiniStatement(satement);
 		
 	}
+	
 
 }

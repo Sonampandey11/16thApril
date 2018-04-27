@@ -10,8 +10,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.cg.model.Bank;
 import com.cg.model.Customer;
+import com.cg.model.Statement;
 import com.cg.service.CustomerImpl;
+import com.cg.service.ISavingAccountService;
 import com.cg.service.SavingAccountServiceImpl;
+import com.cg.service.StatementImpl;
 
 
 /**
@@ -38,14 +41,12 @@ public class BankAppController {
 	    
 	    
 	    // performaing  deposit of savingAccount
-	    final SavingAccountServiceImpl service=(SavingAccountServiceImpl)  application.getBean("savings");
+	    final ISavingAccountService service=(SavingAccountServiceImpl)  application.getBean("savings");
 	    //SavingAccountServiceImpl service= new SavingAccountServiceImpl();
 	    final Scanner scan = new Scanner(System.in);
 	    System.out.println("Enter amount to deposit");
 	    final float depositAmount=scan.nextFloat();
-	    service.deposit(8000);
-	    System.out.println();
-	    
+	  
 	    
 	    //performing withdraw from savingAccount
 	    System.out.println("Enter an amount to withdraw");
@@ -61,17 +62,24 @@ public class BankAppController {
 	    setvalue.add(custom2);
 	    System.out.println(setvalue);
 	    
-	    
 	    //viewById details of Customer
 	    System.out.println("Enter customerId");
 	    int customId=scan.nextInt();
-	    if(custom.getCustomerId()==customId);
+	    if(custom.getCustomerId()==customId || custom2.getCustomerId()==customId)
 	    {
 	    	System.out.println(setvalue);
 	    }
+	
+	    else
+	    {
+	    	System.out.println("please enter correct customerId ");
+	    }
+	    
 	    
 	    	
+	    //displaying ministatement of transaction
 	    
+	  /* final StatementImpl ministatement=(StatementImpl) application.getBean("mini");*/
 	   
 	    
 	    

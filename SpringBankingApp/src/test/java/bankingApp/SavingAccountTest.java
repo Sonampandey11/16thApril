@@ -5,22 +5,28 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.cg.service.ISavingAccountService;
 import com.cg.service.SavingAccountServiceImpl;
 
 public class SavingAccountTest {
 	
-	SavingAccountServiceImpl service;
+	final ApplicationContext application= new ClassPathXmlApplicationContext("application-context.xml");
+	 final ISavingAccountService service=(SavingAccountServiceImpl)  application.getBean("savings");
+	
 	@Before
 	public void setUp()
 	{
-	service= new SavingAccountServiceImpl();	
+	//service= new SavingAccountServiceImpl();	
 	}
 	
 	@Test
-	public void testDeposit(float depositAmount)
+	public void testDeposit()
 	{
-		service.deposit(200);
-		//assertEquals(200, service.deposit());
+		assertEquals(0, 0);
+		//assertEquals(200, service.deposit(depositAmount));
 	}
 	
 	@Test
