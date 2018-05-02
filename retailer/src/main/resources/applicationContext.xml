@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.cg" />
+
+	<!-- establishing connection with database -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/retail" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+	<!-- creating jdbctemplate -->
+	<bean id="template"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg index="0">
+			<ref bean="dataSource"></ref>
+		</constructor-arg>
+	</bean>
+
+	<bean id="cdao" class="com.cg.dao.CustomerDaoImpl">
+		<property name="template" ref="template"></property>
+	</bean>
+	<bean id="customerservice"
+		class="com.cg.service.CustomerServiceImpl">
+		<constructor-arg index="0">
+			<ref bean="cdao"></ref>
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="gdao" class="com.cg.dao.GoodsDaoImpl">
+		<constructor-arg index="0">
+			<ref bean="template"></ref>
+		</constructor-arg>
+
+	</bean>
+	<bean id="goodservice" class="com.cg.service.GoodsServiceImpl">
+		<constructor-arg index="0">
+			<ref bean="gdao"></ref>
+		</constructor-arg>
+	</bean>
+
+	<bean id="sdao" class="com.cg.dao.SupplierDaoImpl">
+		<constructor-arg index="0">
+			<ref bean="template"></ref>
+		</constructor-arg>
+
+
+	</bean>
+
+	<bean id="supplierservice"
+		class="com.cg.service.SupplierServiceImpl">
+		<constructor-arg index="0">
+			<ref bean="sdao"></ref>
+		</constructor-arg>
+
+	</bean>
+
+
+	<bean id="rdao" class="com.cg.dao.RetailerDaoImpl">
+		<constructor-arg index="0">
+			<ref bean="template"></ref>
+		</constructor-arg>
+
+	</bean>
+	<bean id="retailerservice"
+		class="com.cg.service.RetailerServiceImpl">
+		<constructor-arg index="0">
+			<ref bean="rdao"></ref>
+		</constructor-arg>
+
+	</bean>
+</beans>
