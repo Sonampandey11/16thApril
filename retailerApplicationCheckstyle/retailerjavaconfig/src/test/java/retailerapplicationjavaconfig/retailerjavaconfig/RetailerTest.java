@@ -50,20 +50,5 @@ public class RetailerTest {
 	}
 	
 	
-	/*	
-		List<Customer> value = rservice.retrieveCustomer();
-		assertTrue(value.contains(value.get(0)));
-	}
-
-	@Test
-	public void retrieveGoodsTest() {
-		List<Goods> value = retailerService.retrieveGoods();
-		assertTrue(value.contains(value.get(0)));
-	}
-
-	@Test
-	public void retrieveSupplierTest() {
-		List<Supplier> value = retailerService.retrieveSupplier();
-		assertTrue(value.contains(value.get(0)));
-	} */
+	
 }
