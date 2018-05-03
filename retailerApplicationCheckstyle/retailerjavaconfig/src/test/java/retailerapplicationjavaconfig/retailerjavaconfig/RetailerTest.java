@@ -19,9 +19,6 @@ import com.cg.service.SupplierServiceImpl;
 
 public class RetailerTest {
 	ApplicationContext application=new AnnotationConfigApplicationContext(Applicationconfig.class);
-	final CustomerServiceImpl service= application.getBean("customerservice",CustomerServiceImpl.class);
-	final SupplierServiceImpl sservice=application.getBean("supplierservice",SupplierServiceImpl.class);
-	final GoodsServiceImpl   gservice=application.getBean("goodservice",GoodsServiceImpl.class);
 	final RetailerServiceImpl rservice=application.getBean("retailerservice",RetailerServiceImpl.class);
 	Customer customer= new Customer(103,"Sonam","Airoli","Rs200",12);
 	Goods good =new Goods(3,"Britania",5,"Rs98",107);
