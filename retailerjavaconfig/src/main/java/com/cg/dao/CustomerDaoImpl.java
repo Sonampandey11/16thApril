@@ -23,32 +23,7 @@ public class CustomerDaoImpl implements IcustomerDao {
 	
 	
 
-	/**
-	 * @return the template
-	 */
-	public JdbcTemplate getTemplate() {
-		return template;
-	}
-
-
-
-	/**
-	 * @param template the template to set
-	 */
-	public void setTemplate(JdbcTemplate template) {
-		this.template = template;
-	}
-
-
-
-	/**
-	 * 
-	 */
-	public CustomerDaoImpl() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	@Override
 	public int addCustomer(Customer customer) {
 

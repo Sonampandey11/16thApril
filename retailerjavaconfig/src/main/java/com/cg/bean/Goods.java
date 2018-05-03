@@ -87,18 +87,8 @@ public class Goods {
 		this.goodsPrice = goodsPrice;
 		this.supplierId = supplierId;
 	}
-	public Goods() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Goods [goodsId=" + goodsId + ", goodsName=" + goodsName + ", goodsQuantity=" + goodsQuantity
-				+ ", goodsPrice=" + goodsPrice + ", supplierId=" + supplierId + "]";
-	}
+	
+	
 	
 
 }

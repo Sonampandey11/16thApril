@@ -48,18 +48,11 @@ public class RetailerMain {
 	/**
 	 * 
 	 */
-	public RetailerMain() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-	@Override
-	public String toString() {
-		return "RetailerMain [retailerId=" + retailerId + ", retailerName=" + retailerName + ", retailerAddress="
-				+ retailerAddress + "]";
-	}
+	
 	/**
 	 * @param retailerId
 	 * @param retailerName

@@ -13,12 +13,12 @@ import com.cg.service.GoodsServiceImpl;
 public class GoodsTest {
 	ApplicationContext application=new AnnotationConfigApplicationContext(Applicationconfig.class);
 	final GoodsServiceImpl   gservice=application.getBean("goodservice",GoodsServiceImpl.class);
-	 Goods good =new Goods(17,"Koutonsi",5,"Rs98",107);
+	 Goods good =new Goods(27,"Koutonsi",5,"Rs98",107);
 	 @Test
 	  public void addGoods()
 	  {
 		  int check=gservice.addGoods(good);
-		  assertEquals(17, check);
+		  assertEquals(27, check);
 	  }
 
 	 @Test

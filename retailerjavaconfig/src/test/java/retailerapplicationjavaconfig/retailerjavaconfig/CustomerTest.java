@@ -12,25 +12,25 @@ import com.cg.service.CustomerServiceImpl;
 public class CustomerTest {
 	ApplicationContext application=new AnnotationConfigApplicationContext(Applicationconfig.class);
 	final CustomerServiceImpl service= application.getBean("customerservice",CustomerServiceImpl.class);
-	Customer customer= new Customer(10,"Arushi","Airoli","Rs200",12);
+	Customer customer= new Customer(14,"Anaya","Airoli","Rs200",12);
 
 
 	@Test
 	public void checkCustomerTest()
 	{
 		int check=service.addCustomer(customer);
-		assertEquals(10, check);
+		assertEquals(14, check);
 	}
 	@Test
 	public void updateCustomerTest()
 	{
-		Customer custom=new Customer(11,"Neha","Airoli","Rs500",12);  
+		Customer custom=new Customer(19,"Neha","Airoli","Rs500",12);  
 	}
 
 	@Test
 	public void deleteCustomerTest()
 	{
-		Customer custom=new Customer(108,"Sonam","Airoli","Rs500",12);  
+		Customer custom=new Customer(11,"Sonam","Airoli","Rs500",12);  
 		int value=service.removeCustomer(custom);
 		assertEquals(1, value);
 	}
@@ -41,9 +41,6 @@ public class CustomerTest {
 		int check=service.addCustomer(customers);
 		assertEquals(1, check);
 	}
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+	
 
 }

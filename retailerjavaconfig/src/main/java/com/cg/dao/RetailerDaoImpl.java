@@ -16,18 +16,6 @@ public class RetailerDaoImpl implements IRetailerDao{
 	JdbcTemplate template;
 
 	/**
-	 * @param datasource the datasource to set
-	 */
-	
-
-	/**
-	 * @param template the template to set
-	 */
-	public void setTemplate(JdbcTemplate template) {
-		this.template = template;
-	}
-
-	/**
 	 * @param template
 	 */
 	public RetailerDaoImpl(JdbcTemplate template) {

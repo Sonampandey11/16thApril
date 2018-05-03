@@ -72,10 +72,7 @@ public void setPaymentMode(final String paymentMode) {
 	this.paymentMode = paymentMode;
 }
 
-public Customer() {
-	super();
-	// TODO Auto-generated constructor stub
-}
+
 /**
  * @param customerId
  * @param customerName
@@ -93,11 +90,7 @@ public Customer(int customerId, String customerName, String customerAddress, Str
 /* (non-Javadoc)
  * @see java.lang.Object#toString()
  */
-@Override
-public String toString() {
-	return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", customerAddress="
-			+ customerAddress + ", paymentMode=" + paymentMode + ", retailerId=" + retailerId + "]";
-}
+
 
 
 }

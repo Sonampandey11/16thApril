@@ -143,27 +143,6 @@ public class Supplier {
 
 
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Supplier [supplierId=" + supplierId + ", supplierName=" + supplierName + ", supplierAddress="
-				+ supplierAddress + ", quantityOrder=" + quantityOrder + ", orderId=" + orderId + ", amount=" + amount
-				+ ", retailerId=" + retailerId + "]";
-	}
-
-
-
-	/**
-	 * 
-	 */
-	public Supplier() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
 
 	/**
 	 * @param supplierId
