@@ -14,7 +14,7 @@
 request.getAttribute("customer");
 %> --%>
 
-
+<!-- 
 <form action="ServletHome" method="post">
 AddCustomer:
 <input type="submit" value="addDetails">
@@ -28,9 +28,12 @@ RemoveCustomer:<input type="text" name="id2"><br>
 <form>
 UpdateCustomer:<input type="text" name="id3"><br>
 <input type="submit" value="updateCustomer">
-</form>
+</form> -->
+
+<table>
 
 
+</table>
 
 </body>
 </html> 

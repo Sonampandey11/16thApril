@@ -2,6 +2,7 @@ package com.cg.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.function.Consumer;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,21 +16,31 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.cg.bean.Customer;
 import com.cg.bean.Goods;
 import com.cg.bean.Supplier;
+import com.cg.service.CustomerServiceImpl;
 import com.cg.service.RetailerServiceImpl;
 //@WebServlet("/ServletHome")
 public class ServletDemo extends HttpServlet{
  
 	@Autowired
-	RetailerServiceImpl retailerservice;
+    RetailerServiceImpl retailer;
+	
+	
 	public void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException 
 	{
 		System.out.println("Hii");
 		final ApplicationContext application=new AnnotationConfigApplicationContext(Applicationconfig.class);
 		//final RetailerServiceImpl service=application.getBean("retailerservice",RetailerServiceImpl.class);
-		final List<Customer> list=retailerservice.viewCustomer();
+	  final List<Customer> list=retailer.viewCustomer();
+		
+		/*
+		final List<Customer> list= service.addCustomer("cus");
+		     List<Customer> list2=service.updateCustomer( customer)*/
 		request.setAttribute("customer",list);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("mainpage.jsp").forward(request, response);
+		
+		
+		
 		/*//displaying entire goods
 		final List<Goods> listgoods=service.viewGoods();
 		request.setAttribute("goods", listgoods);

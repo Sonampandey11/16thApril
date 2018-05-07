@@ -7,8 +7,17 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import com.cg.dao.CustomerDaoImpl;
+import com.cg.dao.GoodsDaoImpl;
+import com.cg.dao.RetailerDaoImpl;
+import com.cg.dao.SupplierDaoImpl;
+import com.cg.service.CustomerServiceImpl;
+import com.cg.service.GoodsServiceImpl;
+import com.cg.service.RetailerServiceImpl;
+import com.cg.service.SupplierServiceImpl;
 
 @Configuration
 @PropertySource(value= {"classpath:application.properties"})
@@ -36,6 +45,7 @@ public class Applicationconfig {
 		datasource.setUsername(environment.getRequiredProperty(USERNAME));
 		datasource.setPassword(environment.getRequiredProperty(PASSWORD));
 		return datasource;
-		
+
 	}
+		
 }
