@@ -1,0 +1,14 @@
+git branch sonam
+
+git status
+
+git checkout sonam // to change your current branch working directory
+
+// add file  and then commit file
+
+git push origin sonam
+
+git pull origin master
+
+git merge sonam
+
